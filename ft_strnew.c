@@ -14,17 +14,13 @@
 
 char	*ft_strnew(size_t size)
 {
-	int		i;
-	char	*new;
+	size_t		i;
+	char		*new;
 
 	i = 0;
 	if ((new = (char *)malloc(sizeof(char) * size + 1)) == NULL)
 		return (NULL);
-	new[size] = '\0';
-	while (new[i] != '\0')
-	{
-		new[i] = '\0';
-		i++;
-	}
+	while (i <= size)
+		new[i++] = '\0';
 	return (new);
 }
